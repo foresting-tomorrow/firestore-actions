@@ -7,7 +7,7 @@ const { Firestore } = require('@google-cloud/firestore');
     const path = core.getInput('path', { required: true })
     const value = core.getInput('value', { required: true })
     const projectId = core.getInput('projectId', { required: true })
-    const key = core.getInput('key', { required: true })
+    const field = core.getInput('field', { required: true })
     const credentials = core.getInput('credentials', { required: true })
 
     core.debug("Setting up credentials")
@@ -17,7 +17,7 @@ const { Firestore } = require('@google-cloud/firestore');
     core.debug("Writing data")
     const db = new Firestore({ projectId, keyFilename: credentialsFile.name })
     const docRef = db.doc(path);
-    await docRef.set({ [key]: value }, { merge: true })
+    await docRef.set({ [field]: value }, { merge: true })
 })().catch(err => {
     core.setFailed(err.message)
 });
