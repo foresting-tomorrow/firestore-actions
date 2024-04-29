@@ -13,5 +13,8 @@
     "@actions/github": "^6.0.0",
     "@google-cloud/firestore": "^7.6.0",
     "tmp": "^0.2.3"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
   }
 }
