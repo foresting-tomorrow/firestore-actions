@@ -1,0 +1,21 @@
+name: "firestore-actions"
+description: "Perform firestore queries through github actions"
+inputs:
+  path:
+    description: "Write path"
+    required: true
+  field:
+    description: "Field to add/overwrite"
+    required: true
+  value:
+    description: "Value to write"
+    required: true
+  projectId:
+    description: "Project id"
+    required: true
+  credentials:
+    description: "Firestore credentials"
+    required: true
+runs:
+  using: 'node20'
+  main: 'index.js'
