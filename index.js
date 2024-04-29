@@ -1,7 +1,7 @@
-import * as core from '@actions/core';
-import { fileSync } from 'tmp';
-import { writeSync } from 'fs';
-import { Firestore } from '@google-cloud/firestore';
+const core = require('@actions/core');
+const { fileSync } = require('tmp');
+const { writeSync } = require('fs');
+const { Firestore } = require('@google-cloud/firestore');
 
 (async () => {
     const path = core.getInput('path', { required: true })
